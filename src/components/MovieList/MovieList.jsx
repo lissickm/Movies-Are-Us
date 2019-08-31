@@ -20,7 +20,28 @@ class MovieList extends Component {
 
 
         return(
-            <p>In Movie List Component</p>
+            <div>
+                <p>In Movie List Component</p>
+                <pre>{JSON.stringify(this.props.reduxStore.moviesReducer)}</pre>
+                <ul>
+                    {this.props.reduxStore.moviesReducer.map(movie => {
+                        // return <li>{movie.title}</li> 
+                            return (   
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td><img alt={movie.id} src={movie.poster} /></td>
+                                            <td>{movie.title}</td>
+                                            <td>{movie.description}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            )
+
+                            
+                    })}
+                </ul>
+            </div >
         )
 
 
