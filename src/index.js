@@ -14,7 +14,7 @@ import { takeEvery, put } from 'redux-saga/effects';
 
 // Create the rootSaga generator function
 function* rootSaga() {
-
+    yield takeEvery('FETCH_MOVIES', fetchMovies);
 }
 
 // Create sagaMiddleware
@@ -40,7 +40,19 @@ const genresReducer = (state = [], action) => {
     }
 }
 
-
+// generator function to receive FETCHMOVIES action
+function* fetchMovies(action) {
+    console.log('the action in fetchMovies: ', action);
+    try {
+        let response = yield axios.get('/api/movie');
+        console.log('saga response: ', response.data);
+        
+    } catch (error) {
+        console.log('error in fetch: ', error);
+        
+    }
+    
+}
 
 
 // Create one store that all components can use
