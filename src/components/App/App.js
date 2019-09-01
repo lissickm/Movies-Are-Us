@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
 //import {withRouter} from 'react-router-dom';
 import MovieList from '../MovieList/MovieList';
-import MovieDetails from '../MovieDetails/MovieDetails'
+import MovieDetails from '../MovieDetails/MovieDetails';
+import MovieEdit from '../MovieEdit/MovieEdit';
 
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
           <pre>{JSON.stringify(this.props.reduxState)}</pre>
           <Route exact path="/" component={MovieList}/>
           <Route path="/details" component={MovieDetails}/>
+          <Route path="/edit" component={MovieEdit}/>
         </div>
       </Router>
       </div >
