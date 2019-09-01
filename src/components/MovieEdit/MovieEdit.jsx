@@ -5,12 +5,12 @@ class MovieEdit extends Component {
 
     handleCancelButton = (id) => {
         console.log('in handle cancel button');
-        // this.props.history.push('/');
+        this.props.history.push('/details');
     }
 
     handleSaveButton = (id) => {
         console.log('in handle back button');
-        // this.props.history.push('/');
+        this.props.history.push('/details');
     }
 
     render() {
@@ -18,8 +18,8 @@ class MovieEdit extends Component {
         return(
             <div>
                 <p>In Movie Edit</p>
-                <button>Cancel</button>
-                <button>Save</button>
+                <button onClick={this.handleCancelButton}>Cancel</button>
+                <button onClick={this.handleSaveButton}>Save</button>
             </div>
         )
 
