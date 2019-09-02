@@ -16,14 +16,23 @@ class MovieEdit extends Component {
 
     handleNewInputData = (propertyName, event) => {
         console.log('in handle new input data');
+        let movieIdToEdit = this.props.reduxStore.clickedMovieIdReducer;
         this.setState({
             ...this.state,
             [propertyName]: event.target.value
+        })
+        this.setState({
+            ...this.state,
+            id: movieIdToEdit
         })  
     }
 
     addNewMovieData = (event) => {
         console.log('in add new movie data');
+        this.props.dispatch({
+            type: 'UPDATE_MOVIE_DATA',
+            payload: this.state
+        })
         // this.props.history.push('/details');
         
     }
@@ -33,6 +42,7 @@ class MovieEdit extends Component {
         return(
             <div>
                 <p>In Movie Edit</p>
+                <pre>{JSON.stringify(this.props.reduxStore.clickedMovieIdReducer)}</pre>
                 <button onClick={this.handleCancelButton}>Cancel</button>
                 
                 <p>Enter the movie you wish to edit here</p>
