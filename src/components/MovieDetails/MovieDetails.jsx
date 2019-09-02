@@ -26,29 +26,36 @@ class MovieDetails extends Component {
 
        
        
-
-        return(
+        if (clickedMovieArray !== undefined && clickedMovieArray.length > 0) {
+            const movie = clickedMovieArray[0];
+            return (
             <div>
-            <p>In Movie Details</p>
+              <p>In Movie Details</p>
                
             <div>
-                {clickedMovieArray.map(movie => {
-                   return(<div>
                        <button className= "button btn btn-secondary" onClick={() => this.handleBackButton(movie.id)}>Back To List</button>
                        <br/>
                        <button class="button btn btn-secondary" onClick={() => this.handleEditButton(movie.id)}>Edit</button>
                        <h1>{movie.title}</h1>
                         <div>{movie.description}</div>
-                        </div>)
-                })}
+                        <br/>
+                        <ul>
+
+                            {movie.genres.map(genre => {
+                                return (
+                                    <li>
+                                        {genre.name}
+                                    </li>
+                                )
+                            })}
+
+                        </ul>
             </div>
-            </div>
-
             
-            
-
-        )
-
+            </div>)
+        } else {
+            return (<p> your mama</p>)
+        }
                 
    } 
 
