@@ -40,17 +40,25 @@ class MovieList extends Component {
                 <ul>
                     {this.props.reduxStore.moviesReducer.map(movie => {
                         // return <li>{movie.title}</li> 
-                            return (   
-                                <table>
+                            return (  
+                                <div className="table-responsive">
+                                <table className="table">
+                                    {/* <thead>
+                                        <tr>
+                                                <th class="col-ms-4">Poster</th>
+                                                <th class="col-ms-4">Title</th>
+                                                <th class="col-ms-4">Description</th>
+                                        </tr>
+                                    </thead> */}
                                     <tbody>
                                         <tr>
                                             <td><img src={movie.poster} alt='' onClick={() => this.handleMovieClick(movie.id)} /></td>
-                                            {/* <td><img onClick={this.handleMovieClick} id={movie.id} alt= '' src={movie.poster} /></td> */}
-                                            <td>{movie.title}</td>
+                                            <td className="movieTitle">{movie.title}</td>
                                             <td>{movie.description}</td>
                                         </tr>
                                     </tbody>
                                 </table>
+                                </div> 
                             )
 
                             
