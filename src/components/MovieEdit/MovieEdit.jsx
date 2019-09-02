@@ -18,13 +18,11 @@ class MovieEdit extends Component {
         console.log('in handle new input data');
         let movieIdToEdit = this.props.reduxStore.clickedMovieIdReducer;
         this.setState({
-            ...this.state,
+            ...this.state, 
+            id: movieIdToEdit,
             [propertyName]: event.target.value
         })
-        this.setState({
-            ...this.state,
-            id: movieIdToEdit
-        })  
+        
     }
 
     addNewMovieData = (event) => {

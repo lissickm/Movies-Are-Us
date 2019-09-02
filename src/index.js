@@ -15,6 +15,7 @@ import { takeEvery, put } from 'redux-saga/effects';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchMovies);
+    yield takeEvery('UPDATE_MOVIE_DATA', fetchMovieEdits);
 }
 
 // Create sagaMiddleware
@@ -59,13 +60,24 @@ function* fetchMovies(action) {
         yield put({
             type: 'SET_MOVIES',
             payload: response.data
+        })   
+    } catch (error) {
+        console.log('error in fetch: ', error);    
+    } 
+}
+
+// generator function to receive UPDATE MOVIE DATA action
+function* fetchMovieEdits(action) {
+    console.log('the action in fetchMovieEdits: ', action);
+    try {
+        let response = yield axios.put('/api/movie', action.payload);
+        console.log('saga response: ', response);
+        yield put({
+            type: 'FETCH_MOVIES'
         })
-        
     } catch (error) {
         console.log('error in fetch: ', error);
-        
     }
-    
 }
 
 
