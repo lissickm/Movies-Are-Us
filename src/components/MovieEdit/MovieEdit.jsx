@@ -31,7 +31,7 @@ class MovieEdit extends Component {
             type: 'UPDATE_MOVIE_DATA',
             payload: this.state
         })
-        // this.props.history.push('/details');
+        this.props.history.push('/details');
         
     }
 
