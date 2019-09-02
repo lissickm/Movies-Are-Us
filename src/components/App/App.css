@@ -26,7 +26,7 @@
 .movieTitle {
   font-size: 25px;
   width: 200px;
-  background-color: #BCF8EC;
+  background-color: #AED9E0;
 
 }
 
@@ -35,10 +35,12 @@ table{
     width: 2000px;
 }
 
-.container {
-  background-color: #AED9E0;
+.test {
+  background-color: #BCF8EC;
 }
 
 #mainjumbo {
-  background-color: #BCF8EC;
+  background-color: #AED9E0;
 }
+
+input{ width:50%}

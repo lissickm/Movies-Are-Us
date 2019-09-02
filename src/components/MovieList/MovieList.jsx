@@ -37,6 +37,7 @@ class MovieList extends Component {
             <div>
                 <p>In Movie List Component</p>
                 <pre>{JSON.stringify(this.props.reduxStore.moviesReducer)}</pre>
+                <h3>Please click on a movie poster below to view or edit additional information.</h3>
                 <ul>
                     {this.props.reduxStore.moviesReducer.map(movie => {
                         // return <li>{movie.title}</li> 
@@ -45,9 +46,9 @@ class MovieList extends Component {
                                 <table className="table">
                                     {/* <thead>
                                         <tr>
-                                                <th class="col-ms-4">Poster</th>
-                                                <th class="col-ms-4">Title</th>
-                                                <th class="col-ms-4">Description</th>
+                                                <th class="col-md-6">Poster</th>
+                                                <th class="col-md-4">Title</th>
+                                                <th class="col-md-2">Description</th>
                                         </tr>
                                     </thead> */}
                                     <tbody>

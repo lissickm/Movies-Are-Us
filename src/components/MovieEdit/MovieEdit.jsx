@@ -41,15 +41,17 @@ class MovieEdit extends Component {
             <div>
                 <p>In Movie Edit</p>
                 <pre>{JSON.stringify(this.props.reduxStore.clickedMovieIdReducer)}</pre>
-                <button onClick={this.handleCancelButton}>Cancel</button>
-                
-                <p>Enter the movie you wish to edit here</p>
+                <button className="button btn btn-secondary" onClick={this.handleCancelButton}>Cancel</button>
                 <p>{JSON.stringify(this.state)}</p>
+                <h3>Enter the movie you wish to edit here</h3>
+                
                 <form onSubmit={this.addNewMovieData}>
                     
                     <input type='text' placeholder='title' onChange={(event) => { this.handleNewInputData('title', event) }} />
+                    <br/>
                     <input type='description' placeholder='description' onChange={(event) => { this.handleNewInputData('description', event) }} />
-                    <input type='submit' value='Save Edits' />
+                    <br/>
+                    <input className="button btn btn-secondary" type='submit' value='Save Edits' />
                     
                 </form>
                 

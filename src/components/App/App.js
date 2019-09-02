@@ -13,13 +13,13 @@ class App extends Component {
   // Renders the entire app on the DOM
   render() {
     return (
-      <div className="container">
+      <div>
       <Router>
         <div className="App">
           <div className="jumbotron" id="mainjumbo">
             <h1>Movies Are Us!</h1>
           </div>
-          <h3>Please click on a movie poster below to view or edit additional information.</h3>
+          
           <pre>{JSON.stringify(this.props.reduxState)}</pre>
           <Route exact path="/" component={MovieList}/>
           <Route path="/details" component={MovieDetails}/>

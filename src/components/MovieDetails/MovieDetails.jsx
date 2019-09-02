@@ -34,8 +34,9 @@ class MovieDetails extends Component {
             <div>
                 {clickedMovieArray.map(movie => {
                    return(<div>
-                       <button onClick={() => this.handleBackButton(movie.id)}>Back To List</button>
-                       <button onClick={() => this.handleEditButton(movie.id)}>Edit</button>
+                       <button className= "button btn btn-secondary" onClick={() => this.handleBackButton(movie.id)}>Back To List</button>
+                       <br/>
+                       <button class="button btn btn-secondary" onClick={() => this.handleEditButton(movie.id)}>Edit</button>
                        <h1>{movie.title}</h1>
                         <div>{movie.description}</div>
                         </div>)
