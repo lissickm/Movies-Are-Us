@@ -3,13 +3,19 @@ const pool = require('../modules/pool');
 const router = express.Router();
 
 function arrayConverter(movieGenreArray) {
+    
     let movies = [];
 
-    movieGenreArray.forEach(movieGenre =>{
+    // make an array of objects with all 14 movies and their information
+    // since the data coming back had about 30 rows, sift out the unique movies
+    // push the unique movie objects into an empty array
+    // push the matching genre array to the respective movie object
+    movieGenreArray.forEach(movieGenre => {
         let movie = movies.find(movie => movieGenre.movie_id===movie.id )
         console.log(movie);
         if (movie === undefined) {
             // make a movie and assign it to "movie"
+            // fill out the genres later
             movie = {
                 id: movieGenre.movie_id,
                 poster: movieGenre.poster,
@@ -19,7 +25,7 @@ function arrayConverter(movieGenreArray) {
             }
             movies.push(movie);
         }
-        // make genre
+        // make genre object
         let genre = {
             id: movieGenre.genre_id,
             name: movieGenre.genre_name
@@ -37,7 +43,8 @@ router.get('/', (req, res) => {
         FROM genres, junction_table, movies
         WHERE movies.id=junction_table.movie_id AND junction_table.genre_id=genres.id;;`;
     pool.query(queryText)
-        .then((result) => {            
+        .then((result) => { 
+            // take the query result and convert the array           
             res.send(arrayConverter(result.rows)); 
         })
         .catch((err) => {
@@ -46,6 +53,8 @@ router.get('/', (req, res) => {
         })
 });
 
+// send put request to change movie information
+// no need to send data back, other than a status code
 router.put('/', (req, res) => {
     const updatedMovie = req.body;
 

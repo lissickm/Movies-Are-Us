@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 .App-header {
   background-color: #222;
   height: 150px;
@@ -27,17 +26,14 @@
   font-size: 25px;
   width: 200px;
   background-color: #AED9E0;
-
 }
 
+tbody {
+  text-align: left;
+}
 table{
-    /* border: 1px solid black; */
     width: 2000px;
 }
-
-/* .test {
-  background-color: #BCF8EC;
-} */
 
 #mainjumbo {
   background-color: #AED9E0;
@@ -91,6 +87,6 @@ h3 {
   padding-top: 30px;
 }
 
-/* #saveEditButton {
-  padding-top: 50px;
-} */
+.image {
+  text-align: left;
+}

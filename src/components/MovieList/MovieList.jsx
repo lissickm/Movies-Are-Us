@@ -6,10 +6,12 @@ import {connect} from 'react-redux';
 
 class MovieList extends Component {
 
+    // render the movies right away
     componentDidMount() {
         this.getMovies();
     }
 
+    // function to dispatch an action to fetch movies
     getMovies() {
         console.log('in get movies');
         this.props.dispatch({
@@ -17,8 +19,8 @@ class MovieList extends Component {
         })   
     }
 
+    // function to dispatch an action to get details and route to details page
     handleMovieClick = (id) => {
-        
         console.log('in handle movie click');
         this.props.dispatch({
             type: 'GET_DETAILS',
@@ -30,8 +32,6 @@ class MovieList extends Component {
     }
 
     render() {
-
-
 
         return(
             <div>
@@ -52,28 +52,22 @@ class MovieList extends Component {
                                     </thead> */}
                                     <tbody>
                                         <tr>
-                                            <td><img src={movie.poster} alt='' onClick={() => this.handleMovieClick(movie.id)} /></td>
+                                            <td className="image"><img src={movie.poster} alt='' onClick={() => this.handleMovieClick(movie.id)} /></td>
                                             <td className="movieTitle">{movie.title}</td>
                                             <td className="description">{movie.description}</td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 </div> 
-                            )
-
-                            
+                            )       
                     })}
                 </ul>
             </div >
         )
-
-
     }
-
-
 }
 
-
+// make redux store available
 const mapStateToProps = reduxStore => ({
     reduxStore
 });

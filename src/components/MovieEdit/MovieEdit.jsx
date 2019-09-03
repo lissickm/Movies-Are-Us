@@ -9,22 +9,25 @@ class MovieEdit extends Component {
         description: ''
     }
 
+    // function to handle the click of the cancel button to route back to the details component
     handleCancelButton = (id) => {
         console.log('in handle cancel button');
         this.props.history.push('/details');
     }
 
+    // function to update the local state from the inputs
     handleNewInputData = (propertyName, event) => {
         console.log('in handle new input data');
         let movieIdToEdit = this.props.reduxStore.clickedMovieIdReducer;
         this.setState({
-            ...this.state, 
+            ...this.state,
             id: movieIdToEdit,
             [propertyName]: event.target.value
         })
-        
+
     }
 
+    // function to dispatch an update movie action and route back to the details page
     addNewMovieData = (event) => {
         console.log('in add new movie data');
         this.props.dispatch({
@@ -32,39 +35,33 @@ class MovieEdit extends Component {
             payload: this.state
         })
         this.props.history.push('/details');
-        
+
     }
 
     render() {
 
-        return(
+        return (
             <div>
-                
                 {/* <pre>{JSON.stringify(this.props.reduxStore.clickedMovieIdReducer)}</pre> */}
                 <button className="button btn btn-secondary" onClick={this.handleCancelButton}>Cancel</button>
                 {/* <p>{JSON.stringify(this.state)}</p> */}
                 <h3>Enter the movie information you wish to edit here.</h3>
-                
+
                 <form onSubmit={this.addNewMovieData}>
-                    
+
                     <input type='text' placeholder='title' onChange={(event) => { this.handleNewInputData('title', event) }} />
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <input type='description' placeholder='description' onChange={(event) => { this.handleNewInputData('description', event) }} />
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <button id="saveEditButton" className="button btn btn-secondary" type='submit'>Save Edits</button>
-                    
+
                 </form>
-                
             </div>
         )
-
     }
-
 }
-
-
 
 const mapStateToProps = reduxStore => ({
     reduxStore
