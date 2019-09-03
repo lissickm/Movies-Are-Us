@@ -13,11 +13,11 @@ class App extends Component {
   // Renders the entire app on the DOM
   render() {
     return (
-      <div>
+      <div className="wholeApp">
       <Router>
         <div className="App">
           <div className="jumbotron" id="mainjumbo">
-            <h1>Movies Are Us!</h1>
+            <div className="mainHeader">Movies Are Us!</div>
           </div>
           
           <pre>{JSON.stringify(this.props.reduxState)}</pre>

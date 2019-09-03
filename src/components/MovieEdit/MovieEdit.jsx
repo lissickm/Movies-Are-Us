@@ -39,10 +39,10 @@ class MovieEdit extends Component {
 
         return(
             <div>
-                <p>In Movie Edit</p>
-                <pre>{JSON.stringify(this.props.reduxStore.clickedMovieIdReducer)}</pre>
+                
+                {/* <pre>{JSON.stringify(this.props.reduxStore.clickedMovieIdReducer)}</pre> */}
                 <button className="button btn btn-secondary" onClick={this.handleCancelButton}>Cancel</button>
-                <p>{JSON.stringify(this.state)}</p>
+                {/* <p>{JSON.stringify(this.state)}</p> */}
                 <h3>Enter the movie you wish to edit here</h3>
                 
                 <form onSubmit={this.addNewMovieData}>

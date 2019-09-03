@@ -43,4 +43,37 @@ table{
   background-color: #AED9E0;
 }
 
-input{ width:50%}
+input { 
+  width:50%
+}
+
+.detailsBody {
+  text-align: left;
+}
+
+.wholeApp {
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #BCF8EC;
+}
+
+h3 {
+  padding-bottom: 30px;
+}
+
+.description {
+  font-size: 20px;
+  text-align: left;
+}
+
+.mainHeader {
+  font-size: 70px;
+}
+
+.unorderedList {
+  padding-bottom: 60px;
+}
+
+.detailButton {
+  margin-bottom: 20px;
+}

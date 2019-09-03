@@ -35,9 +35,8 @@ class MovieList extends Component {
 
         return(
             <div>
-                <p>In Movie List Component</p>
-                <pre>{JSON.stringify(this.props.reduxStore.moviesReducer)}</pre>
-                <h3>Please click on a movie poster below to view or edit additional information.</h3>
+                {/* <pre>{JSON.stringify(this.props.reduxStore.moviesReducer)}</pre> */}
+                <h3>*Please click on a movie poster below to view or edit additional information.</h3>
                 <ul>
                     {this.props.reduxStore.moviesReducer.map(movie => {
                         // return <li>{movie.title}</li> 
@@ -55,7 +54,7 @@ class MovieList extends Component {
                                         <tr>
                                             <td><img src={movie.poster} alt='' onClick={() => this.handleMovieClick(movie.id)} /></td>
                                             <td className="movieTitle">{movie.title}</td>
-                                            <td>{movie.description}</td>
+                                            <td className="description">{movie.description}</td>
                                         </tr>
                                     </tbody>
                                 </table>
