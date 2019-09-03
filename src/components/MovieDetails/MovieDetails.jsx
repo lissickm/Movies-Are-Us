@@ -29,7 +29,7 @@ class MovieDetails extends Component {
         if (clickedMovieArray !== undefined && clickedMovieArray.length > 0) {
             const movie = clickedMovieArray[0];
             return (
-            <div class="container">
+            <div>
               
                
             <div>
@@ -41,7 +41,7 @@ class MovieDetails extends Component {
 
                        <div className="detailsBody">
                        <h1>{movie.title}</h1>
-                        <div>{movie.description}</div>
+                        <div className="description">{movie.description}</div>
                         <br/>
                         
                         <ul>

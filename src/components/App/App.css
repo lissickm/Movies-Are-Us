@@ -35,9 +35,9 @@ table{
     width: 2000px;
 }
 
-.test {
+/* .test {
   background-color: #BCF8EC;
-}
+} */
 
 #mainjumbo {
   background-color: #AED9E0;
@@ -52,8 +52,9 @@ input {
 }
 
 .wholeApp {
-  margin-left: 50px;
-  margin-right: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 800px;
   background-color: #BCF8EC;
 }
 
@@ -64,6 +65,8 @@ h3 {
 .description {
   font-size: 20px;
   text-align: left;
+  padding-bottom: 30px;
+  padding-top: 30px;
 }
 
 .mainHeader {
@@ -72,8 +75,13 @@ h3 {
 
 .unorderedList {
   padding-bottom: 60px;
+  
 }
 
 .detailButton {
   margin-bottom: 20px;
+}
+
+li {
+  font-size: 20px;
 }
